@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Files</title>
+ <link rel="icon" type="image/x-icon" href="IIITALogo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="bgnone">
+     <div class="main">
+    <div class="registration-container">
+               <a href="adminHome.html" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <h1>Add File</h1>
+    
+    <form action="SubmitFileServlet" method="post" enctype="multipart/form-data" >
+
+       
+
+
+        <div class="form-group2">
+        <label for="fileName">File Name:</label>
+        <input type="text" id="fileName" name="fileName" required><br><br>
+        </div >
+        
+      <div class="form-group2">
+        <label for="fileFormat">File Format:</label>
+        <input type="text" id="fileFormat" name="fileFormat" required><br><br>
+      </div>
+      <div class="form-group1">
+          
+          <!--        <label for="file">Select File:</label>-->
+         <div class="input-group mb-3">
+        <input type="file" class="form-control" id="file" name="file" required>
+        </div>
+                
+
+        <input type="submit" value="Submit" style="cursor: pointer;" class="btn">
+      </div>
+    </form>
+    </div>
+</div>
+</body>
+</html>

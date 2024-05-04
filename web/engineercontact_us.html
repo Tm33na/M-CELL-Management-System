@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+        <link rel="icon" type="image/x-icon" href="IIITALogo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: gray; /* Light background */
+            color: #333; /* Dark text */
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #333; /* Dark container */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #fff; /* Light heading */
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .info-item {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #007bff; /* Blue icon color */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #ccc; /* Light text */
+        }
+
+        .info-item a {
+            color: #007bff; /* Blue links */
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .back-icon {
+            position: fixed;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #333; /* Dark background */
+            color: #fff; /* Light icon color */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-icon:hover {
+            background-color: #555; /* Dark hover color */
+        }
+
+        .back-icon.left {
+            left: 20px;
+        }
+
+        .back-icon.right {
+            right: 20px;
+        }
+        
+        .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+}
+    </style>
+    
+    
+     <script> 
+
+    // Function to check if session attribute "userId" exists
+        function checkSession() {
+            fetch('CheckEngineerSessionServlet')
+            .then(response => {
+                if (!response.ok) {
+                    // If session attribute doesn't exist, redirect to login page
+                    window.location.href = 'engineerlogin.html';
+                }
+            })
+            .catch(error => console.error('Error checking session:', error));
+        }
+        
+        // Call the function to check session when the page loads
+        checkSession();
+
+</script>
+    
+    
+</head>
+<body>
+    <a href="engineerHome.html" class="back-icon left"><i class="fas fa-arrow-left"></i></a>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-linkedin"></i>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">Your Profile</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-instagram"></i>
+                <p>Instagram: <a href="https://www.instagram.com/yourprofile">Your Profile</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-facebook"></i>
+                <p>Facebook: <a href="https://www.facebook.com/yourprofile">Your Profile</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <p>Contact No: +1 (123) 456-7890</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Address: 123 Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    
+     <div class="footer">
+            This portal is designed to manage maintenance activities at IIITA.  <br>
+            &copy; 2024 IIITA Cell Maintenance Portal
+        </div>
+</body>
+</html>

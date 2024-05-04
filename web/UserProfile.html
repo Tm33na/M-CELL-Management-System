@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="IIITALogo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>User Profile</title>
+    <script> 
+
+    // Function to check if session attribute "userId" exists
+        function checkSession() {
+            fetch('CheckSessionServlet')
+            .then(response => {
+                if (!response.ok) {
+                    // If session attribute doesn't exist, redirect to login page
+                    window.location.href = 'userlogin.html';
+                }
+            })
+            .catch(error => console.error('Error checking session:', error));
+        }
+        
+        // Call the function to check session when the page loads
+        checkSession();
+
+</script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bgnone">  <center>
+    <div class="profile-container">         
+ <div class="close">
+                <a href="UserHome.html"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+        <h2>User Profile</h2>
+        
+        <div class='p-logo'> <i class="fa-solid fa-user" style="font-size: 80px"></i></div>
+        <div class="user-info" id="user-info">
+            <!-- User Information -->
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Institute ID:</strong> <span id="user-id"></span></p>
+        </div>
+        <hr>
+        <h3>Change Email</h3>
+        <form id="email-form" action="UserProfileServlet" method="post">
+            <input type="hidden" name="action" value="changeEmail">
+            <label for="new-email">New Email:</label>
+            <input type="email" id="new-email" name="new-email" required>
+            <button type="submit" class="btn">Change Email</button>
+        </form>
+        <hr>
+        <h3>Change Password</h3>
+        <form id="password-form" action="UserProfileServlet" method="post">
+             <input type="hidden" name="action" value="changePassword">
+            <div><label for="current-password">Current Password:</label>
+           <input type="password" id="current-password" name="current-password" required></div>
+            <div> <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required></div>
+            <button type="submit" class="btn">Change Password</button>
+        </form>
+    </div>  </center>
+
+<div id="space"></div>
+
+<div class="footer">
+            This portal is designed to manage maintenance activities at IIITA.  <br>
+            &copy; 2024 IIITA Cell Maintenance Portal
+        </div>
+
+    <script>
+        // Fetch user information using AJAX when the page loads
+        fetch('UserProfileServlet')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-name').innerText = data.name;
+                document.getElementById('user-email').innerText = data.email;
+                document.getElementById('user-id').innerText = data.instituteId;
+            })
+            .catch(error => console.error('Error fetching user information:', error));
+    </script>
+</body>
+</html>

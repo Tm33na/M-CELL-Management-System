@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="IIITALogo.png">
+        <link rel="stylesheet" href="style2.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js via CDN -->
+
+
+    <script>
+        
+        
+   
+        // Function to check if session attribute "userId" exists
+        function checkSession() {
+            fetch('CheckSessionServlet')
+            .then(response => {
+                if (!response.ok) {
+                    // If session attribute doesn't exist, redirect to login page
+                    window.location.href = 'userlogin.html';
+                }
+            })
+            .catch(error => console.error('Error checking session:', error));
+        }
+        
+        // Call the function to check session when the page loads
+        checkSession();
+
+   
+        
+        
+        
+        function updateUserNotificationCount() {
+    fetch('GetUnreadUserNotificationCountServlet')
+        .then(response => response.json())
+        .then(data => {
+            const count = data.count;
+            const notificationCountElement = document.getElementById('notification-count');
+            if (count > 0) {
+                notificationCountElement.textContent = count;
+                notificationCountElement.style.display = 'inline-block'; // Show the count
+            } else {
+                notificationCountElement.textContent = '';
+                notificationCountElement.style.display = 'none'; // Hide the count if it's zero
+            }
+        })
+        .catch(error => console.error('Error updating notification count:', error));
+}
+
+// Call the function to update the notification count when the page loads
+window.addEventListener('load', updateUserNotificationCount);
+
+    
+
+                 function loadFeedbackForm() {
+    // Fetch the complaint form content using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Create a temporary container for the form content
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = xhr.responseText;
+
+                // Find the form element within the loaded content
+                var FeedbackForm = tempDiv.querySelector('.container');
+
+                if (FeedbackForm) {
+                    // Replace the content of the complaint-form-container with the complaint form
+                    document.getElementById("feedback-form-container").innerHTML = FeedbackForm.outerHTML;
+                } else {
+                    console.error('Feedback form not found in the loaded content');
+                }
+            } else {
+                console.error('Failed to load Feedback form form');
+            }
+        }
+    };
+    xhr.open('GET', 'FeedbackForm.html', true);
+    xhr.send();
+}
+
+
+           
+   function loadComplaintForm() {
+    // Fetch the complaint form content using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Create a temporary container for the form content
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = xhr.responseText;
+
+                // Find the form element within the loaded content
+                var complaintForm = tempDiv.querySelector('.container');
+
+                if (complaintForm) {
+                    // Replace the content of the complaint-form-container with the complaint form
+                    document.getElementById("complaint-form-container").innerHTML = complaintForm.outerHTML;
+                } else {
+                    console.error('Complaint form not found in the loaded content');
+                }
+            } else {
+                console.error('Failed to load complaint form');
+            }
+        }
+    };
+    xhr.open('GET', 'FetchUserDetailsServlet', true);
+    xhr.send();
+}
+
+
+
+  
+
+
+
+function loadArchives() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "RetrieveFilesServlet", true);
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            // Parse the JSON response and display files with download links
+            var files = JSON.parse(xhr.responseText);
+            var archiveContent = "<ul>"; // Start building the HTML content
+            files.forEach(function (file) {
+                archiveContent += "<li>" + file.fileName + " - " + file.dateStored + " (<a href='DownloadFileServlet?fileId=" + file.id + "'>Download</a>)</li>";
+            });
+            archiveContent += "</ul>"; // Close the list
+            // Open a popup window with the archives content
+            var popupWindow = window.open("", "Archives", "width=600,height=400");
+            // Write the HTML content to the popup window
+            popupWindow.document.write("<html><head><title>Archives</title>  <link rel='stylesheet' href='style2.css'> </head><body>" + archiveContent + "</body></html>");
+        } else {
+            alert("Failed to fetch archives.");
+        }
+        // Redirect to the homepage
+        window.location.href = "UserHome.html";
+    };
+    xhr.send();
+}
+
+
+
+
+ 
+       
+        
+    </script>
+   
+</head>
+
+    <body>
+        
+
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="IIITALogo.png" alt="IIITA Logo" >
+                    <h2>Dashboard</h2>
+                </div>
+                <ul class="nav-links">
+            <li><a href="#" onclick='loadComplaintForm()' >Submit Maintenance Request</a></li>
+                      <li>     <a href="UserViewHistoryServlet">View Complaint History</a>     </li>
+<!--                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>-->
+                        <li><a href="UserLogoutServlet" >Logout</a></li>
+                          <li><a href="UserMessageServlet" ><i class="fa-solid fa-bell"></i> <span id="notification-count"></span></a></li>
+
+
+                </ul>
+            </nav>
+        
+
+
+
+
+            <div class="c-sidebar">
+                <input type="checkbox" id="sidebar-toggle">
+            
+                <nav class="sidebar">
+                    <label for="sidebar-toggle" class="sidebar-icon"><i class="fa-solid fa-bars"></i></label>
+
+            
+                    <div class="sidebar-header">
+                        <h3 >MENU</h3>
+                        <label for="sidebar-toggle" class="sidebar-icon" style="position:absolute; left:200px; opacity: .7;"> <i class="fa-solid fa-xmark"> </i></label> 
+
+            
+                    </div>
+                    
+                    <hr > <!-- comment -->
+                    <ul class="menu">
+                        <li><a href="UserHome.html">Home</a></li>
+            
+                        <li><a href="UserProfile.html">Profile</a></li>                        
+                         <li><a href="#"  onclick="loadFeedbackForm()">Feedback</a></li>
+                        <li><a href="contact_us.html">Contact us</a></li>
+                        <li><a href="#" onclick="loadArchives()">Archives</a></li>
+                        <li><a href="UserResolvedComplaintsServlet" >Resolved Complaints</a></li>
+
+                        
+
+                    </ul>
+                </nav>
+                </div>
+
+
+
+
+        <div class="main-container" >
+            <div class="bg"> 
+                    
+                </div>
+            <div class="content " >
+            <div id="complaint-form-container" >
+                
+                
+              <div id="feedback-form-container"  >
+                    
+
+<!--                  <div id="archiveList"> </div>-->
+        
+                <main class="main">
+                    
+                    
+                    <div class="welcome " >
+                        <h2>Welcome to your Dashboard!</h2>
+                        <p>Manage your maintenance requests and view your maintenance history.</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-around;">
+                    <div style="width: 27%; ">
+        <canvas id="pieChart"></canvas>
+    </div>
+    <div style="width: 40%; margin-top:6%;">
+        <canvas id="barChart"></canvas>
+    </div >
+          </div>          
+                                
+                </main>
+                
+                </div>
+                </div>
+
+            </div>
+
+
+            <div class="r-sidebar">
+                
+                <header class="header">
+
+                    <div id="links-container">
+                       <ul>
+                 <iframe src="RetrieveLinkServlet" ></iframe>
+       
+                           <!-- This is where fetched links will be inserted by the servlet -->
+                           <!-- You can leave it empty for now -->
+                       </ul>
+                   </div>
+               </header>
+                  </div>
+
+        </div>
+
+
+  
+
+        <div class="footer">
+            This portal is designed to manage maintenance activities at IIITA.  <br>
+            &copy; 2024 IIITA Cell Maintenance Portal
+        </div>
+        
+        
+        <script> // Function to fetch data from the server
+// Function to fetch data from the server
+const fetchData = () => {
+    fetch('UserComplaintsDataServlet', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // User ID will be retrieved from the session attribute
+        body: `userId=${'<%= session.getAttribute("userId") %>'}`, 
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Received data:', data); // Log fetched data to the console
+
+        const totalComplaints = data.totalComplaints;
+        const resolvedComplaints = data.resolvedComplaints;
+        // Store the fetched data in the totalComplaints and resolvedComplaints variables
+
+        // Prepare data for charts
+        const unresolvedComplaints = totalComplaints - resolvedComplaints;
+
+        // Update pie chart
+        const pieChart = new Chart(document.getElementById('pieChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: ['Resolved', 'Unresolved'],
+                datasets: [{
+                    label: 'Complaints Status',
+                    data: [resolvedComplaints, unresolvedComplaints],
+                    backgroundColor: ['white', 'black'],
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        // Update bar chart
+        const barChart = new Chart(document.getElementById('barChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Resolved', 'Unresolved'],
+                datasets: [{
+                    label: 'Complaints Status',
+                    data: [resolvedComplaints, unresolvedComplaints],
+                    backgroundColor: ['white', 'black'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+        alert('Error fetching data! Check the console for details.'); // Alert to indicate error
+    });
+}
+
+// Call the fetchData function on page load
+window.onload = () => {
+    fetchData();
+}
+
+
+    </script>
+    </body>
+</html>

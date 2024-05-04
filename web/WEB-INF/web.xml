@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- Servlet Mapping -->
+    <servlet>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <servlet-class>UserRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <url-pattern>/UserRegistrationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>UserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/UserLoginServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <servlet-class>UserLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <url-pattern>/UserLogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UserForgotPasswordServlet</servlet-name>
+        <servlet-class>UserForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserForgotPasswordServlet</servlet-name>
+        <url-pattern>/UserForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <servlet-class>UserProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <url-pattern>/UserProfileServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>FetchUserDetailsServlet</servlet-name>
+        <servlet-class>FetchUserDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FetchUserDetailsServlet</servlet-name>
+        <url-pattern>/FetchUserDetailsServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>UserResolvedComplaintsServlet</servlet-name>
+        <servlet-class>UserResolvedComplaintsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserResolvedComplaintsServlet</servlet-name>
+        <url-pattern>/UserResolvedComplaintsServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>UserMessageServlet</servlet-name>
+        <servlet-class>UserMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserMessageServlet</servlet-name>
+        <url-pattern>/UserMessageServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+<servlet>
+        <servlet-name>AdminMessageServlet</servlet-name>
+        <servlet-class>AdminMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMessageServlet</servlet-name>
+        <url-pattern>/AdminMessageServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>GetUnreadUserNotificationCountServlet</servlet-name>
+        <servlet-class>GetUnreadUserNotificationCountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUnreadUserNotificationCountServlet</servlet-name>
+        <url-pattern>/GetUnreadUserNotificationCountServlet</url-pattern>
+    </servlet-mapping>
+    
+
+
+     <servlet>
+        <servlet-name>DeadlineNotificationScheduler</servlet-name>
+        <servlet-class>DeadlineNotificationScheduler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeadlineNotificationScheduler</servlet-name>
+        <url-pattern>/DeadlineNotificationScheduler</url-pattern>
+    </servlet-mapping>
+    
+
+    
+
+ <servlet>
+        <servlet-name>GetUnreadAdminNotificationCountServlet</servlet-name>
+        <servlet-class>GetUnreadAdminNotificationCountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUnreadAdminNotificationCountServlet</servlet-name>
+        <url-pattern>/GetUnreadAdminNotificationCountServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EngineerRegistrationServlet</servlet-name>
+        <servlet-class>EngineerRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EngineerRegistrationServlet</servlet-name>
+        <url-pattern>/EngineerRegistrationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EngineerLoginServlet</servlet-name>
+        <servlet-class>EngineerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EngineerLoginServlet</servlet-name>
+        <url-pattern>/EngineerLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EngineerForgotPasswordServlet</servlet-name>
+        <servlet-class>EngineerForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EngineerForgotPasswordServlet</servlet-name>
+        <url-pattern>/EngineerForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>AdminLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/AdminLogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+     
+     <servlet>
+        <servlet-name>AdminProfileServlet</servlet-name>
+        <servlet-class>AdminProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProfileServlet</servlet-name>
+        <url-pattern>/AdminProfileServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>AdminForgotPasswordServlet</servlet-name>
+        <servlet-class>AdminForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminForgotPasswordServlet</servlet-name>
+        <url-pattern>/AdminForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddLinkServlet</servlet-name>
+        <servlet-class>AddLinkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddLinkServlet</servlet-name>
+        <url-pattern>/AddLinkServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RetrieveLinkServlet</servlet-name>
+        <servlet-class>RetrieveLinkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RetrieveLinkServlet</servlet-name>
+        <url-pattern>/RetrieveLinkServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SubmitComplaintServlet</servlet-name>
+        <servlet-class>SubmitComplaintServlet</servlet-class>
+        
+          <!-- Configure for handling multipart requests -->
+    <multipart-config>
+        <!-- Maximum size of file upload -->
+        <max-file-size>10485760</max-file-size> <!-- 10 MB -->
+        <!-- Maximum size of all request content -->
+        <max-request-size>20971520</max-request-size> <!-- 20 MB -->
+        <!-- Size threshold after which files will be written to disk -->
+        <file-size-threshold>0</file-size-threshold>
+        <!-- Location to temporarily store uploaded files -->
+                <location>..\..\..\..\..\IIITAM-Cell\M-CELL\tmp</location>
+
+    </multipart-config>
+    
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitComplaintServlet</servlet-name>
+        <url-pattern>/SubmitComplaintServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>SubmitFileServlet</servlet-name>
+        <servlet-class>SubmitFileServlet</servlet-class>
+        
+          <!-- Configure for handling multipart requests -->
+    <multipart-config>
+        <!-- Maximum size of file upload -->
+        <max-file-size>20971520</max-file-size> <!-- 20 MB -->
+        <!-- Maximum size of all request content -->
+        <max-request-size>31457280</max-request-size> <!-- 30 MB -->
+        <!-- Size threshold after which files will be written to disk -->
+        <file-size-threshold>0</file-size-threshold>
+        <!-- Location to temporarily store uploaded files -->
+                <location>..\..\..\..\..\IIITAM-Cell\M-CELL\tmp</location>
+
+    </multipart-config>
+    
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitFileServlet</servlet-name>
+        <url-pattern>/SubmitFileServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>RetrieveFilesServlet</servlet-name>
+        <servlet-class>RetrieveFilesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RetrieveFilesServlet</servlet-name>
+        <url-pattern>/RetrieveFilesServlet</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <servlet-class>DownloadFileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <url-pattern>/DownloadFileServlet</url-pattern>
+    </servlet-mapping>
+    
+   
+    <servlet>
+        <servlet-name>AdminViewComplaintServlet</servlet-name>
+        <servlet-class>AdminViewComplaintServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminViewComplaintServlet</servlet-name>
+        <url-pattern>/AdminViewComplaintServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>AdminComplaintsDataServlet</servlet-name>
+        <servlet-class>AdminComplaintsDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminComplaintsDataServlet</servlet-name>
+        <url-pattern>/AdminComplaintsDataServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>EngineerComplaintsDataServlet</servlet-name>
+        <servlet-class>EngineerComplaintsDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EngineerComplaintsDataServlet</servlet-name>
+        <url-pattern>/EngineerComplaintsDataServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+     <servlet>
+        <servlet-name>UserComplaintsDataServlet</servlet-name>
+        <servlet-class>UserComplaintsDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserComplaintsDataServlet</servlet-name>
+        <url-pattern>/UserComplaintsDataServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>DownloadAttachmentServlet</servlet-name>
+        <servlet-class>DownloadAttachmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadAttachmentServlet</servlet-name>
+        <url-pattern>/DownloadAttachmentServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>UserViewHistoryServlet</servlet-name>
+        <servlet-class>UserViewHistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserViewHistoryServlet</servlet-name>
+        <url-pattern>/UserViewHistoryServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>SubmitFeedbackServlet</servlet-name>
+        <servlet-class>SubmitFeedbackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitFeedbackServlet</servlet-name>
+        <url-pattern>/SubmitFeedbackServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>CheckSessionServlet</servlet-name>
+        <servlet-class>CheckSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckSessionServlet</servlet-name>
+        <url-pattern>/CheckSessionServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CheckAdminSessionServlet</servlet-name>
+        <servlet-class>CheckAdminSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckAdminSessionServlet</servlet-name>
+        <url-pattern>/CheckAdminSessionServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ViewUserServlet</servlet-name>
+        <servlet-class>ViewUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewUserServlet</servlet-name>
+        <url-pattern>/ViewUserServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ViewEngineerServlet</servlet-name>
+        <servlet-class>ViewEngineerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewEngineerServlet</servlet-name>
+        <url-pattern>/ViewEngineerServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ViewFeedbackServlet</servlet-name>
+        <servlet-class>ViewFeedbackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewFeedbackServlet</servlet-name>
+        <url-pattern>/ViewFeedbackServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>AssignTaskServlet</servlet-name>
+        <servlet-class>AssignTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssignTaskServlet</servlet-name>
+        <url-pattern>/AssignTaskServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>TaskDetailsServlet</servlet-name>
+        <servlet-class>TaskDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskDetailsServlet</servlet-name>
+        <url-pattern>/TaskDetailsServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>UpdateComplaintStatusServlet</servlet-name>
+        <servlet-class>UpdateComplaintStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateComplaintStatusServlet</servlet-name>
+        <url-pattern>/UpdateComplaintStatusServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>GetUnreadNotificationCountServlet</servlet-name>
+        <servlet-class>GetUnreadNotificationCountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUnreadNotificationCountServlet</servlet-name>
+        <url-pattern>/GetUnreadNotificationCountServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>EngineerMessageServlet</servlet-name>
+        <servlet-class>EngineerMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EngineerMessageServlet</servlet-name>
+        <url-pattern>/EngineerMessageServlet</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ResolvedTaskServlet</servlet-name>
+        <servlet-class>ResolvedTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResolvedTaskServlet</servlet-name>
+        <url-pattern>/ResolvedTaskServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+      <servlet>
+        <servlet-name>AdminResolvedComplaintsServlet</servlet-name>
+        <servlet-class>AdminResolvedComplaintsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminResolvedComplaintsServlet</servlet-name>
+        <url-pattern>/AdminResolvedComplaintsServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    <servlet>
+        <servlet-name>UpdateTaskStatusServlet</servlet-name>
+        <servlet-class>UpdateTaskStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateTaskStatusServlet</servlet-name>
+        <url-pattern>/UpdateTaskStatusServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+     <servlet>
+        <servlet-name>AdminShowAssignedTaskServlet</servlet-name>
+        <servlet-class>AdminShowAssignedTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowAssignedTaskServlet</servlet-name>
+        <url-pattern>/AdminShowAssignedTaskServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>
+            60
+        </session-timeout>
+    </session-config>
+</web-app>

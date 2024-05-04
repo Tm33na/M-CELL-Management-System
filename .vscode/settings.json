@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\trilo.LAPTOP-ICMALO9U\\Downloads\\INSTALLER FILES\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0.jar"
+    ],
+    "livePreview.defaultPreviewPath": "/web/index.html"
+}
