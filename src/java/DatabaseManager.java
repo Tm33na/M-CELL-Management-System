@@ -6,9 +6,9 @@ import java.sql.Statement;
 
 public class DatabaseManager {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/iiita";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "1234";
+    private static final String URL = "jdbc:mysql://sql108.infinityfree.com:3306/if0_38571225_iiita";
+    private static final String USERNAME = "if0_38571225";
+    private static final String PASSWORD = "QAVmXjcLtF1";
 
     public static Connection getConnection() throws SQLException {
         try {
